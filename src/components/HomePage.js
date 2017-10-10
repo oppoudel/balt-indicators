@@ -57,6 +57,9 @@ const HomePage = () => {
         <li>
           <Link to="/revenue">Year to End Sales Tax Revenue</Link>
         </li>
+        <li>
+          <Link to="/threeCharts">Three Charts</Link>
+        </li>
       </ol>
     </div>
   )

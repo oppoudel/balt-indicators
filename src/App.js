@@ -18,6 +18,7 @@ import VacancyRates from './components/VacancyRates'
 import NetAbsorption from './components/NetAbsorption'
 import BusinessEmployment from './components/BusinessEmployment'
 import YearToDateRevenue from './components/YearToDateRevenue'
+import ThreeCharts from './components/Pages/ThreeCharts'
 import 'semantic-ui-css/semantic.min.css'
 import './App.css'
 
@@ -41,6 +42,7 @@ const App = () => (
     <Route exact path="/absorption" component={NetAbsorption} />
     <Route exact path="/business" component={BusinessEmployment} />
     <Route exact path="/revenue" component={YearToDateRevenue} />
+    <Route exact path="/threeCharts" component={ThreeCharts} />
   </div>
 )
 

@@ -7,20 +7,34 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts'
 import { TotalUnitsSold as data } from '../data/Data'
 
-const addComma = (decimal, fixed = 0) => decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+const addComma = (decimal, fixed = 0) =>
+  decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 const UnitsSold = () => (
   <div className="Chart">
-    <h2>Total Units Sold</h2>
+    <h3>Total Units Sold</h3>
     <ResponsiveContainer>
-      <LineChart data={data} margin={{ top: 25, right: 30, left: 30, bottom: 25 }}>
+      <LineChart
+        data={data}
+        margin={{ top: 15, right: 30, left: 30, bottom: 25 }}
+      >
         <XAxis dataKey="Date" />
-        <YAxis yAxisId="left" dataKey="Metro" orientation="left" tickFormatter={addComma} />
-        <YAxis yAxisId="right" dataKey="City" orientation="right" tickFormatter={addComma} />
+        <YAxis
+          yAxisId="left"
+          dataKey="Metro"
+          orientation="left"
+          tickFormatter={addComma}
+        />
+        <YAxis
+          yAxisId="right"
+          dataKey="City"
+          orientation="right"
+          tickFormatter={addComma}
+        />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip formatter={addComma} />
         <Legend verticalAlign="top" height={36} />

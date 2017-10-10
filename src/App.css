@@ -2,8 +2,21 @@
   width: 100%;
   height: 100%;
 }
+.two-charts {
+  width: 100vw;
+  height: 100vh;
+}
+.one-half {
+  height: 45vh;
+  margin: 0 auto;
+}
 .Chart {
   text-align: center;
+  padding-top: 2rem;
   width: 100%;
   height: 100%;
+}
+
+h3 {
+  margin: 0;
 }

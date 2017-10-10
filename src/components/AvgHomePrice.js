@@ -7,7 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts'
 import { AvgHomePrice as data } from '../data/Data'
 
@@ -20,15 +20,23 @@ const addComma = (decimal, fixed = 0) =>
 
 const AvgHomePrice = () => (
   <div className="Chart">
-    <h2>Average Home (Sales) Price</h2>
+    <h3>Average Home (Sales) Price</h3>
     <ResponsiveContainer>
-      <LineChart data={data} margin={{ top: 25, right: 30, left: 30, bottom: 25 }}>
+      <LineChart
+        data={data}
+        margin={{ top: 25, right: 30, left: 30, bottom: 25 }}
+      >
         <XAxis dataKey="Date" />
         <YAxis tickFormatter={addComma} />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip formatter={addComma} />
         <Legend verticalAlign="top" height={36} />
-        <Line type="monotone" dataKey="Metro" stroke="blue" name="Baltimore Metro Area" />
+        <Line
+          type="monotone"
+          dataKey="Metro"
+          stroke="blue"
+          name="Baltimore Metro Area"
+        />
         <Line
           type="monotone"
           dataKey="City"

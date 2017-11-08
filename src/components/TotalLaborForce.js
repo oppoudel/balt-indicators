@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   LineChart,
   Line,
@@ -7,19 +7,22 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
-} from 'recharts'
-import { TotalLaborForce as data } from '../data/Data'
+  ResponsiveContainer,
+} from 'recharts';
+import { TotalLaborForce as data } from '../data/Data';
 
 const addComma = (decimal, fixed = 0) => {
-  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-}
+  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
 
 const TotalLaborForce = () => (
   <div className="Chart">
-    <h2>Total Labor Force</h2>
+    <h3>Total Labor Force</h3>
     <ResponsiveContainer>
-      <LineChart data={data} margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
+      <LineChart
+        data={data}
+        margin={{ top: 25, right: 50, left: 50, bottom: 25 }}
+      >
         <XAxis dataKey="Date" />
         <YAxis
           yAxisId="left"
@@ -38,7 +41,13 @@ const TotalLaborForce = () => (
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip formatter={addComma} />
         <Legend verticalAlign="top" height={36} />
-        <Line type="monotone" yAxisId="left" dataKey="Maryland" stroke="blue" name="Maryland" />
+        <Line
+          type="monotone"
+          yAxisId="left"
+          dataKey="Maryland"
+          stroke="blue"
+          name="Maryland"
+        />
         <Line
           type="monotone"
           yAxisId="right"
@@ -50,6 +59,6 @@ const TotalLaborForce = () => (
       </LineChart>
     </ResponsiveContainer>
   </div>
-)
+);
 
-export default TotalLaborForce
+export default TotalLaborForce;

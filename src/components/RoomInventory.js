@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   LineChart,
   Line,
@@ -7,22 +7,25 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
-} from 'recharts'
-import { RoomInventory as data } from '../data/Data'
+  ResponsiveContainer,
+} from 'recharts';
+import { RoomInventory as data } from '../data/Data';
 
 const toPercent = (decimal, fixed = 0) => {
-  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '%'
-}
+  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '%';
+};
 const addComma = (decimal, fixed = 0) => {
-  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-}
+  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
 
 const RoomOccupancy = () => (
   <div className="Chart">
-    <h2>Hotel Room Inventory & Occupancy Rate</h2>
+    <h3>Hotel Room Inventory & Occupancy Rate</h3>
     <ResponsiveContainer>
-      <LineChart data={data} margin={{ top: 25, right: 30, left: 30, bottom: 25 }}>
+      <LineChart
+        data={data}
+        margin={{ top: 25, right: 30, left: 30, bottom: 25 }}
+      >
         <XAxis dataKey="Date" />
         <YAxis
           yAxisId="left"
@@ -59,6 +62,6 @@ const RoomOccupancy = () => (
       </LineChart>
     </ResponsiveContainer>
   </div>
-)
+);
 
-export default RoomOccupancy
+export default RoomOccupancy;

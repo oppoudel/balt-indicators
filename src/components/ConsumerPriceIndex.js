@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   LineChart,
   Line,
@@ -7,18 +7,31 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
-} from 'recharts'
-import { ConsumerPriceIndex as data } from '../data/Data'
+  ResponsiveContainer,
+} from 'recharts';
+import { ConsumerPriceIndex as data } from '../data/Data';
 
 const UnitsSold = () => (
   <div className="Chart">
-    <h2>Consumer Price Index</h2>
+    <h3>Consumer Price Index</h3>
     <ResponsiveContainer>
-      <LineChart data={data} margin={{ top: 25, right: 30, left: 30, bottom: 25 }}>
+      <LineChart
+        data={data}
+        margin={{ top: 25, right: 30, left: 30, bottom: 25 }}
+      >
         <XAxis dataKey="Date" />
-        <YAxis yAxisId="left" dataKey="Metro" orientation="left" domain={[232, 246]} />
-        <YAxis yAxisId="right" dataKey="City" orientation="right" domain={[150, 162]} />
+        <YAxis
+          yAxisId="left"
+          dataKey="Metro"
+          orientation="left"
+          domain={[232, 246]}
+        />
+        <YAxis
+          yAxisId="right"
+          dataKey="City"
+          orientation="right"
+          domain={[150, 162]}
+        />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Legend verticalAlign="top" height={36} />
@@ -40,6 +53,6 @@ const UnitsSold = () => (
       </LineChart>
     </ResponsiveContainer>
   </div>
-)
+);
 
-export default UnitsSold
+export default UnitsSold;

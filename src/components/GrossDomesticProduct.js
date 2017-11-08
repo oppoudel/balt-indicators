@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   LineChart,
   Line,
@@ -7,17 +7,21 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
-} from 'recharts'
-import { GrossDomesticProduct as data } from '../data/Data'
-const addComma = (decimal, fixed = 0) => decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  ResponsiveContainer,
+} from 'recharts';
+import { GrossDomesticProduct as data } from '../data/Data';
+const addComma = (decimal, fixed = 0) =>
+  decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
 const GrossDomesticProduct = () => (
   <div className="Chart">
-    <h2>Gross Domestic Product</h2>
+    <h3>Gross Domestic Product</h3>
     <p>(in billions)</p>
     <ResponsiveContainer>
-      <LineChart data={data} margin={{ top: 25, right: 30, left: 30, bottom: 25 }}>
+      <LineChart
+        data={data}
+        margin={{ top: 25, right: 30, left: 30, bottom: 25 }}
+      >
         <XAxis dataKey="Date" />
         <YAxis
           yAxisId="left"
@@ -36,7 +40,13 @@ const GrossDomesticProduct = () => (
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip formatter={addComma} />
         <Legend verticalAlign="top" height={36} />
-        <Line type="monotone" yAxisId="left" dataKey="Metro" stroke="blue" name="United States" />
+        <Line
+          type="monotone"
+          yAxisId="left"
+          dataKey="Metro"
+          stroke="blue"
+          name="United States"
+        />
         <Line
           type="monotone"
           yAxisId="right"
@@ -48,6 +58,6 @@ const GrossDomesticProduct = () => (
       </LineChart>
     </ResponsiveContainer>
   </div>
-)
+);
 
-export default GrossDomesticProduct
+export default GrossDomesticProduct;

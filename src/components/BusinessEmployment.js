@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   ComposedChart,
   Line,
@@ -8,19 +8,22 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
-} from 'recharts'
-import { BusinessEmployment as data } from '../data/Data'
+  ResponsiveContainer,
+} from 'recharts';
+import { BusinessEmployment as data } from '../data/Data';
 
 const addComma = (decimal, fixed = 0) => {
-  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-}
+  return decimal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
 
 const BusinessEmployment = () => (
   <div className="Chart">
-    <h2>Business Establishments and Employment</h2>
+    <h3>Business Establishments and Employment</h3>
     <ResponsiveContainer>
-      <ComposedChart data={data} margin={{ top: 25, right: 50, left: 50, bottom: 25 }}>
+      <ComposedChart
+        data={data}
+        margin={{ top: 25, right: 50, left: 50, bottom: 25 }}
+      >
         <XAxis dataKey="Quarter" />
         <YAxis
           yAxisId="left"
@@ -57,6 +60,6 @@ const BusinessEmployment = () => (
       </ComposedChart>
     </ResponsiveContainer>
   </div>
-)
+);
 
-export default BusinessEmployment
+export default BusinessEmployment;
